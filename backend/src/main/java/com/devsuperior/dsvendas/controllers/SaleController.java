@@ -23,6 +23,7 @@ public class SaleController {
 	@Autowired
 	private SaleService service;
 	
+	@CrossOrigin
 	@GetMapping
 	public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable) {
 		Page<SaleDTO> list = service.findAll(pageable);
