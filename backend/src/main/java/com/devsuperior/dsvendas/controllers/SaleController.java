@@ -36,6 +36,7 @@ public class SaleController {
 		return ResponseEntity.ok(list);
 	}
 	
+	@CrossOrigin
 	@GetMapping(value = "/success-by-seller")
 	public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
 		List<SaleSuccessDTO> list = service.successGroupedBySeller();
