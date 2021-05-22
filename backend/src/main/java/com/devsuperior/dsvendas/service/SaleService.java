@@ -25,9 +25,9 @@ public class SaleService {
 	private SellerRepository sellerRepository;
 	
 	@Transactional(readOnly = true)
-	public Page<SaleDTO> findAll(Pageable pegeable) {
-		sellerRepository.findAll(); // Buscar os vendedores e armazenar em cache
-		Page<Sale> result = repository.findAll(pegeable);
+	public Page<SaleDTO> findAll(Pageable pageable) {
+		sellerRepository.findAll();
+		Page<Sale> result = repository.findAll(pageable);
 		return result.map(x -> new SaleDTO(x));
 	}
 	
@@ -38,8 +38,6 @@ public class SaleService {
 	
 	@Transactional(readOnly = true)
 	public List<SaleSuccessDTO> successGroupedBySeller() {
-		return repository.successGroupBySeller();
+		return repository.successGroupedBySeller();
 	}
-	
-	
 }

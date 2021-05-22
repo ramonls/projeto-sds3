@@ -7,7 +7,7 @@ export type Sale = {
     amount: number;
     date: string;
     seller: Seller;
-}
+} 
 
 export type SalePage = {
     content?: Sale[];
