@@ -23,21 +23,21 @@ public class SaleController {
 	@Autowired
 	private SaleService service;
 	
-	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app")
+	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app/dashboard")
 	@GetMapping
 	public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable) {
 		Page<SaleDTO> list = service.findAll(pageable);
 		return ResponseEntity.ok(list);
 	}	
 	
-	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app")
+	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app/dashboard")
 	@GetMapping(value = "/amount-by-seller")
 	public ResponseEntity<List<SaleSumDTO>> amountGroupedBySeller() {
 		List<SaleSumDTO> list = service.amountGroupedBySeller();
 		return ResponseEntity.ok(list);
 	}	
 	
-	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app")
+	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app/dashboard")
 	@GetMapping(value = "/success-by-seller")
 	public ResponseEntity<List<SaleSuccessDTO>> successGroupedBySeller() {
 		List<SaleSuccessDTO> list = service.successGroupedBySeller();
