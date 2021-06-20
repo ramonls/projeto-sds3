@@ -23,7 +23,7 @@ public class SaleController {
 	@Autowired
 	private SaleService service;
 	
-	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app/")
+	@CrossOrigin(origins = "https://ramon-dsvendas.netlify.app")
 	@GetMapping
 	public ResponseEntity<Page<SaleDTO>> findAll(Pageable pageable) {
 		Page<SaleDTO> list = service.findAll(pageable);
